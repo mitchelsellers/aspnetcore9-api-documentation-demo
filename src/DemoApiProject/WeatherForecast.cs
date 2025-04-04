@@ -1,13 +1,27 @@
-namespace DemoApiProject
+namespace DemoApiProject;
+
+/// <summary>
+///     Represents a single point-in-time weather forecast
+/// </summary>
+public class WeatherForecast
 {
-    public class WeatherForecast
-    {
-        public DateOnly Date { get; set; }
+    /// <summary>
+    ///     The Date of the weather forecast
+    /// </summary>
+    public DateOnly Date { get; set; }
 
-        public int TemperatureC { get; set; }
+    /// <summary>
+    ///     The current temperature in Celsius
+    /// </summary>
+    public int TemperatureC { get; set; }
 
-        public int TemperatureF => 32 + (int)(TemperatureC / 0.5556);
+    /// <summary>
+    ///     The current temperature converted to F
+    /// </summary>
+    public int TemperatureF => 32 + (int)(TemperatureC / 0.5556);
 
-        public string? Summary { get; set; }
-    }
+    /// <summary>
+    ///     An overall summary of the current weather
+    /// </summary>
+    public string? Summary { get; set; }
 }

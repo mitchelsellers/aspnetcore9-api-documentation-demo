@@ -7,6 +7,7 @@ namespace DemoApiProject.Controllers
     /// </summary>
     [ApiController]
     [Route("[controller]")]
+    [Produces("application/json")] //Notify that we are expecting/sending JSON
     public class WeatherForecastController : ControllerBase
     {
         private static readonly string[] Summaries = new[]
@@ -29,12 +30,14 @@ namespace DemoApiProject.Controllers
         ///
         /// Sample Request:
         /// 
-        ///     GET /WeatherForecast/GetWeatherForecast
+        ///     GET /WeatherForecast
         /// </remarks>
         /// <returns>
         /// Detailed random weather forecast based on a random summary and temperature
         /// </returns>
+        /// <response code="200">Returns the random weather forecast</response>
         [HttpGet(Name = "GetWeatherForecast")]
+        [ProducesResponseType(StatusCodes.Status200OK)]
         public IEnumerable<WeatherForecast> Get()
         {
             return Enumerable.Range(1, 5).Select(index => new WeatherForecast
