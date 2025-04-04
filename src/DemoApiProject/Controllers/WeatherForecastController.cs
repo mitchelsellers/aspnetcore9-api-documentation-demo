@@ -2,6 +2,9 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace DemoApiProject.Controllers
 {
+    /// <summary>
+    /// Sample API created by Microsoft and included in the project
+    /// </summary>
     [ApiController]
     [Route("[controller]")]
     public class WeatherForecastController : ControllerBase
@@ -18,6 +21,19 @@ namespace DemoApiProject.Controllers
             _logger = logger;
         }
 
+        /// <summary>
+        /// Gets a random weather forecast
+        /// </summary>
+        /// <remarks>
+        /// Does not provide any real value
+        ///
+        /// Sample Request:
+        /// 
+        ///     GET /WeatherForecast/GetWeatherForecast
+        /// </remarks>
+        /// <returns>
+        /// Detailed random weather forecast based on a random summary and temperature
+        /// </returns>
         [HttpGet(Name = "GetWeatherForecast")]
         public IEnumerable<WeatherForecast> Get()
         {
