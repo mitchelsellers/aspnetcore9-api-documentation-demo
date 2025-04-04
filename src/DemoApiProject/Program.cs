@@ -39,7 +39,8 @@ namespace DemoApiProject
                 //Include our detailed API information from comments
                 //NOTE: If you have multiple projects in your solution, you may need to adjust the path to the XML file, or include multiples
                 var xmlDocFile = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
-                options.IncludeXmlComments(Path.Combine(AppContext.BaseDirectory, xmlDocFile));
+                //Extra magic to give controller comments too ;)
+                options.IncludeXmlComments(Path.Combine(AppContext.BaseDirectory, xmlDocFile), true);
 
             }); //Adds the generation of Swagger UI Documentation
 
