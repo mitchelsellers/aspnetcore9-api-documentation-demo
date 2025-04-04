@@ -57,6 +57,15 @@ namespace DemoApiProject
                     options.SwaggerEndpoint("/swagger/v1/swagger.json", "v1");
                     options.RoutePrefix = "SwaggerUI"; //Swagger UI served from here: https://localhost:7062/SwaggerUI
                 });
+
+                //Redoc
+                app.UseReDoc(configuration =>
+                {
+                    configuration.RoutePrefix = "redoc";
+                    configuration.DocumentTitle = "Demo API (ReDoc Version)";
+                    configuration.HideDownloadButton(); //Prevent people from downloading the actual spec
+                    configuration.DisableSearch(); //We have a really small API!
+                });
             }
 
             app.UseHttpsRedirection();
