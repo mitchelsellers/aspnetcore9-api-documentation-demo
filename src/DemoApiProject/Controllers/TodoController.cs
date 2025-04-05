@@ -47,7 +47,7 @@ namespace DemoApiProject.Controllers
         /// <summary>
         /// Gets the full detail of the todo item
         /// </summary>
-        /// <param name="id"></param>
+        /// <param name="id">The id of the todo</param>
         /// <returns></returns>
         [HttpGet("Get/{id}")]
         public IActionResult Get(Guid id)
