@@ -22,6 +22,7 @@ namespace DemoApiProject
             //builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen(options =>
             {
+                options.AddSchemaFilterInstance(new EnumSchemaFilter());
                 //Customize overall information
                 options.SwaggerDoc("v1", new OpenApiInfo
                 {
