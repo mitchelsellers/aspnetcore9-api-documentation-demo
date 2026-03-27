@@ -49,10 +49,12 @@ namespace DemoApiProject.Controllers
         /// </summary>
         /// <param name="id">The id of the todo</param>
         /// <returns></returns>
+        /// <response code="200">The full information</response>
         [HttpGet("Get/{id}")]
+        [ProducesResponseType(typeof(TodoItemResponse), StatusCodes.Status200OK)]
         public IActionResult Get(Guid id)
         {
-            return Ok();
+            return new JsonResult(new TodoItemResponse());
         }
     }
 }
